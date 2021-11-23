@@ -4,19 +4,18 @@ var firebaseConfig = {
     projectId: "lets-chat-web-app-1e2ff",
     storageBucket: "lets-chat-web-app-1e2ff.appspot.com",
     messagingSenderId: "332870229787",
-    appId: "1:332870229787:web:7458bcdbe209e9c626bdbe"
+    appId: "1:332870229787:web:7458bcdbe209e9c626bdbe",
   };
 //ADD YOUR FIREBASE LINKS HERE
 
 firebase.initializeApp(firebaseConfig);
 
-user_name = localStorage.getItem("Username",user_name);
+user_name = localStorage.getItem("Username",username);
 document.getElementById("welcome").innerHTML = "Welcome " + user_name +"!";
 
 function enter_room()
 {
     room_name = document.getElementById("room_name").value;
-
     firebase.database().ref("/").child(room_name).update({
           purpose : "adding room name"
     });

@@ -4,7 +4,7 @@ var firebaseConfig = {
     projectId: "lets-chat-web-app-1e2ff",
     storageBucket: "lets-chat-web-app-1e2ff.appspot.com",
     messagingSenderId: "332870229787",
-    appId: "1:332870229787:web:7458bcdbe209e9c626bdbe"
+    appId: "1:332870229787:web:7458bcdbe209e9c626bdbe",
   };
 //ADD YOUR FIREBASE LINKS HERE
 
@@ -12,10 +12,10 @@ firebase.initializeApp(firebaseConfig);
 
 function login()
 {
-  user_name = document.getElementById("Username").value;
+  user_name = document.getElementById("UserName").value;
   firebase.database().ref("/").child(user_name).update({
       purpose : "adding user"
   });
 
-  localStorage.setItem("Username",user_name);
+  localStorage.setItem("Username",username);
 }
